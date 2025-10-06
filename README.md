@@ -44,55 +44,6 @@ An intelligent navigation system that predicts waterlogging and provides safe ro
 - OpenWeather API Key
 - LLM API Access (OpenAI/Anthropic/etc.)
 
-## 🔧 Installation
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/yourusername/waterlogging-navigation-system.git
-cd waterlogging-navigation-system
-```
-
-### 2. Backend Setup
-
-```bash
-cd backend
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Copy environment variables
-cp .env.example .env
-# Edit .env with your configuration
-
-# Initialize database
-flask db init
-flask db migrate -m "Initial migration"
-flask db upgrade
-
-# Run the backend
-python run.py
-```
-
-### 3. Frontend Setup
-
-```bash
-cd frontend
-
-# Install dependencies
-npm install
-
-# Copy environment variables
-cp .env.example .env
-# Edit .env with your configuration
-
-# Run development server
-npm run dev
-```
-
 ## 🔑 Environment Variables
 
 ### Backend (.env)
@@ -249,31 +200,6 @@ Bhavyapath/
 - `GET /api/chat/history` - Get chat history
 - `POST /api/chat/voice` - Voice input processing
 
-## 🧪 Testing
-
-### Backend Tests
-```bash
-cd backend
-pytest tests/
-```
-
-### Frontend Tests
-```bash
-cd frontend
-npm run test
-```
-
-## 🐳 Docker Deployment
-
-```bash
-# Build and run with Docker Compose
-docker-compose up -d
-
-# Access the application
-# Frontend: http://localhost:3000
-# Backend API: http://localhost:5000
-```
-
 ## 📊 Data Flow
 
 1. **User Input** → Voice/Manual destination entry
@@ -298,9 +224,4 @@ docker-compose up -d
 - [Arnav Labhasetwar](https://github.com/ArnavLabh)
 - [Madhav Rimal](https://github.com/madhavprapanna52)
 
-## 🙏 Acknowledgments
-
-- Google Maps API for navigation
-- OpenWeather for weather data
-- Satellite imagery providers
-- LLM providers for AI capabilities
+## Resources: [view](https://docs.google.com/document/d/1Z9QdXLiajPHiqRQofQmp0IJWrJyJe3x-_geLvvRI0fY/edit?usp=sharing)
