@@ -44,34 +44,9 @@ An intelligent navigation system that predicts waterlogging and provides safe ro
 - OpenWeather API Key
 - LLM API Access (OpenAI/Anthropic/etc.)
 
-## 🔑 Environment Variables
-
-### Backend (.env)
-```env
-FLASK_APP=run.py
-FLASK_ENV=development
-SECRET_KEY=your-secret-key
-DATABASE_URL=postgresql://user:password@localhost:5432/waterlogging_db
-REDIS_URL=redis://localhost:6379/0
-
-# API Keys
-GOOGLE_MAPS_API_KEY=your-google-maps-key
-OPENWEATHER_API_KEY=your-openweather-key
-LLM_API_KEY=your-llm-api-key
-SATELLITE_API_KEY=your-satellite-api-key
-
-# LLM Configuration
-LLM_MODEL=gpt-4
-LLM_TEMPERATURE=0.7
-```
-
-### Frontend (.env)
-```env
-VITE_API_BASE_URL=http://localhost:5000/api
-VITE_GOOGLE_MAPS_API_KEY=your-google-maps-key
-VITE_WS_URL=ws://localhost:5000
-```
 ## Project Flowchart: [View](https://www.mermaidchart.com/view/0c0f0874-30e1-402c-829c-ac7913673bf4)
+<img width="3380" height="3840" alt="BhavyaPath _ Mermaid Chart-2025-10-06-171744" src="https://github.com/user-attachments/assets/b15bcc34-4f71-4ffb-a266-768789d69895" />
+
 ## 📁 Project Structure
 
 ```
