@@ -120,7 +120,7 @@ VITE_API_BASE_URL=http://localhost:5000/api
 VITE_GOOGLE_MAPS_API_KEY=your-google-maps-key
 VITE_WS_URL=ws://localhost:5000
 ```
-
+## Project Flowchart: [View](https://www.mermaidchart.com/view/0c0f0874-30e1-402c-829c-ac7913673bf4)
 ## 📁 Project Structure
 
 ```
