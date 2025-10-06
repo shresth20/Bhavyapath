@@ -124,29 +124,102 @@ VITE_WS_URL=ws://localhost:5000
 ## 📁 Project Structure
 
 ```
-├── backend/          # Flask backend
-│   ├── app/         # Application code
-│   │   ├── models/  # Database models
-│   │   ├── routes/  # API endpoints
-│   │   ├── services/# Business logic
-│   │   ├── ml/      # Machine learning
-│   │   └── utils/   # Utilities
-│   └── tests/       # Backend tests
+Bhavyapath/
 │
-├── frontend/        # Vue.js frontend
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py                 # Flask app initialization and DB setup
+│   │   ├── config.py                   # Configuration (API keys, DB URI, etc.)
+│   │   │
+│   │   ├── models/                     # SQLAlchemy ORM models
+│   │   │   ├── user.py
+│   │   │   ├── feedback.py
+│   │   │   ├── rain_data.py
+│   │   │   ├── road_condition.py
+│   │   │   └── prediction.py
+│   │   │
+│   │   ├── routes/                     # Flask Blueprints for REST APIs
+│   │   │   ├── user_routes.py
+│   │   │   ├── feedback_routes.py
+│   │   │   ├── prediction_routes.py
+│   │   │   ├── data_routes.py
+│   │   │   └── satellite_routes.py
+│   │   │
+│   │   ├── controllers/                # Business logic and processing
+│   │   │   ├── llm_controller.py       # Core LLM query handling
+│   │   │   ├── weather_controller.py   # Rain data and weather integration
+│   │   │   ├── satellite_controller.py # Image/video ingestion
+│   │   │   └── risk_controller.py      # Road risk prediction and analysis
+│   │   │
+│   │   ├── services/                   # API and LLM integrations
+│   │   │   ├── llm_service.py          # Interaction with LLM (OpenAI, Ollama, etc.)
+│   │   │   ├── google_maps_service.py  # Route and pathfinding via Google API
+│   │   │   ├── weather_service.py      # Weather/rain data API service
+│   │   │   └── satellite_service.py    # Handles satellite data sources
+│   │   │
+│   │   ├── utils/
+│   │   │   ├── data_preprocessor.py    # Clean & format data before feeding to LLM
+│   │   │   ├── coordinate_helper.py    # Handle lat-long and geospatial ops
+│   │   │   └── risk_calculator.py      # Risk score calculation logic
+│   │   │
+│   │   ├── static/                     # Static assets (if required)
+│   │   └── templates/                  # HTML templates (if Flask renders any)
+│   │
+│   ├── instance/
+│   │   └── app.db                      # SQLite (or SQLAlchemy) local DB
+│   │
+│   ├── scripts/
+│   │   ├── data_collector.py           # Collect data from APIs & user input
+│   │   ├── model_trainer.py            # Update or fine-tune risk model
+│   │   └── data_validator.py           # Validate and clean incoming data
+│   │
+│   ├── run.py                          # Flask app entry point
+│   ├── requirements.txt                # Python dependencies
+│   └── .env                            # Environment variables (API keys, DB URI)
+│
+├── frontend/
+│   ├── public/
+│   │   └── index.html                  # Vue root HTML
+│   │
 │   ├── src/
-│   │   ├── components/ # Vue components
-│   │   ├── views/      # Page views
-│   │   ├── store/      # Vuex store
-│   │   └── router/     # Vue Router
-│   └── public/         # Static assets
+│   │   ├── assets/                     # Images, icons, etc.
+│   │   ├── components/
+│   │   │   ├── AudioAssistant.vue      # Voice interaction UI
+│   │   │   ├── MapDisplay.vue          # Google Map and route visualization
+│   │   │   ├── RiskAlert.vue           # Displays route risk warnings
+│   │   │   └── FeedbackForm.vue        # Collects user feedback
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Home.vue
+│   │   │   ├── Navigation.vue
+│   │   │   └── ReportIssue.vue
+│   │   │
+│   │   ├── store/
+│   │   │   └── index.js                # Vuex store for state management
+│   │   │
+│   │   ├── services/
+│   │   │   ├── api.js                  # Axios setup for backend communication
+│   │   │   ├── voice_recognition.js    # Speech-to-text for audio commands
+│   │   │   └── text_to_speech.js       # Converts LLM responses to voice
+│   │   │
+│   │   ├── App.vue
+│   │   └── main.js
+│   │
+│   ├── package.json
+│   └── vite.config.js
 │
-├── data/            # Data storage
-│   ├── raw/        # Raw data
-│   ├── processed/  # Processed data
-│   └── models/     # ML models
+├── data/
+│   ├── sample_rain_data.csv
+│   ├── road_condition_data.csv
+│   ├── satellite_images/
+│   └── feedback_reports/
 │
-└── docs/           # Documentation
+├── docs/
+│   ├── architecture_diagram.png
+│   ├── project_flowchart.png
+│   └── API_documentation.md
+│
+└── README.md
 ```
 
 ## 🔄 API Endpoints
