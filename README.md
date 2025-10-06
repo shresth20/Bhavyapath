@@ -45,7 +45,7 @@ An intelligent navigation system that predicts waterlogging and provides safe ro
 - LLM API Access (OpenAI/Anthropic/etc.)
 
 ## Project Flowchart: [View](https://www.mermaidchart.com/view/0c0f0874-30e1-402c-829c-ac7913673bf4)
-<img width="3380" height="3840" alt="BhavyaPath _ Mermaid Chart-2025-10-06-171744" src="https://github.com/user-attachments/assets/b15bcc34-4f71-4ffb-a266-768789d69895" />
+<img width="3380" height="3840" alt="BhavyaPath _ Mermaid Chart-2025-10-06-172216" src="https://github.com/user-attachments/assets/57367214-f1b2-42e1-87cf-3948aa8ef147" />
 
 ## 📁 Project Structure
 
